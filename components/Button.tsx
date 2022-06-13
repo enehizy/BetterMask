@@ -1,6 +1,13 @@
 import React from 'react';
 import ButtonSpinner from './ButtonSpinner';
-export default function Button({text,color,onClick,disabled,loading}){
+type props={
+  text:string,
+  color:string,
+  onClick?:()=> void,
+  disabled?:boolean,
+  loading?:boolean
+}
+export default function Button({text,color,onClick,disabled,loading}:props){
 //  return(
 //     <>
 //     <button onClick={onClick} className={`${color == 'blue'&& 'bg-blue-500'} ${color == 'red'&& 'bg-red-600'} p-2 text-white rounded-full px-5 disabled:opacity-50 transition-opacity`} disabled={true}>{text}</button>

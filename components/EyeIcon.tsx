@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function EyeIcon({show}) {
+export default function EyeIcon({show}:{show:boolean}) {
    if(show){
        return(
     

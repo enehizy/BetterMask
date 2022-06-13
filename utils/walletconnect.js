@@ -23,15 +23,18 @@ export const getUriAndKeyFromUrl=()=>{
 export const connectToWalletConnect=async(uri)=>{
        if(uri){
          try{
+           console.log('connecting...')
           const connector =new WalletConnect({uri})
-          // subscribeToEvents(connector);
+          subscribeToEvents(connector);
 
           const connected=connector.connected;
-         
+          console.log(connector.connected)
           if(!connected) {
+      
              await connector.createSession()
              return connector;
          }
+         console.log('connected -->',connector.connected)
          return connector;
         }
          catch(e){

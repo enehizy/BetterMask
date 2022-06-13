@@ -10,7 +10,7 @@ function data(hash){
     return _data;
 }
  
-export default function Identicon({address}) {
+export default function Identicon({address}:{address:string}) {
     return (
         <div>
            <img className="w-8 h-8 " src={`data:image/svg+xml;base64,${data(address)}`}/>

@@ -15,8 +15,8 @@ export default function CreateWallet(){
   const [,setAccount]=useAccount();
   const [passwordErrorMsg,setPasswordErrorMsg]=React.useState("");
   const [cPasswordErrorMsg,setCPasswordErrorMsg]=React.useState("");
-  const [passwordFieldFocused,setPasswordFieldFocused]=React.useState("");
-  const [cPasswordFieldFocused,setCPasswordFieldFocused]=React.useState("");
+  const [passwordFieldFocused,setPasswordFieldFocused]=React.useState(false);
+  const [cPasswordFieldFocused,setCPasswordFieldFocused]=React.useState(false);
   const [buttonLoading,setButtonLoading]=React.useState(false);
   // const [disabled,setDisabled]=React.useState(true);
   const removePasswordError=(value)=>{
@@ -32,8 +32,8 @@ export default function CreateWallet(){
     e.preventDefault();
     setButtonLoading(true);
     const form=new FormData(e.target)
-    const password=form.get('password');
-    const confirmPassword=form.get('confirm-password')
+    const password=form.get('password') as string;
+    const confirmPassword=form.get('confirm-password') as string;
    if(password.length >= 6 && confirmPassword === password){
      createWallet(password).then((wallet)=>{
        setKey(wallet.encrypted);

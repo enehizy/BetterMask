@@ -1,5 +1,5 @@
 import React from 'react';
-export default function useSessionStorage(key){
+export default function useSessionStorage(key:string):[string,React.Dispatch<React.SetStateAction<string>>]{
     const [item,setItem]=React.useState("");
     React.useEffect(()=>{
          const storedItem=sessionStorage.getItem(key);

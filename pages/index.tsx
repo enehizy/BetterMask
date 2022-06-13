@@ -5,7 +5,7 @@ import Login from "../components/Login";
 import Welcome from "../components/Welcome";
 import useKey from "../hooks/useKey";
 import Spinner from "../components/Spinner";
-import Auth from "../components/Auth";
+// import Auth from "../components/Auth";
 export default function Index(){
     const router= useRouter();
     const [key] =useKey();
@@ -19,12 +19,15 @@ export default function Index(){
       }
     
     },[])
+   
+   
+   
    return (
         <>
         <Head>
             <title>Wallet</title>
         </Head>
-        {loading?<Spinner/>:key?<Login/>:<Welcome/>}}
+        {loading?<Spinner/>:key?<Login/>:<Welcome/>}
        
      
        </>

@@ -1,12 +1,19 @@
 import React, { useEffect } from 'react';
 import EyeIcon from './EyeIcon';
-export default function Password({placeholder,message,isFocused,onChange}){
+type props={
+    placeholder:string,
+    message?:string,
+    isFocused?:boolean,
+    onChange:(value:string)=> void
+}
+export default function Password({placeholder,message,isFocused,onChange}:props){
     const [value,setValue]=React.useState('');
     const [show,setShow]=React.useState(false);
-    const ref=React.useRef();
+    const ref=React.useRef(null);
     React.useEffect(()=>{
+        // setValue(ref.current.value)
     
-      if(`${ref.current.value}`.length >= 1){
+      if(ref !== null && `${ref.current.value}`.length >= 1){
           ref.current.focus();
       }
      

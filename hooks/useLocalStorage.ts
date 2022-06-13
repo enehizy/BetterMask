@@ -1,5 +1,5 @@
 import React from 'react';
-export default function useLocalStorage(key){
+export default function useLocalStorage(key:string):[string,React.Dispatch<React.SetStateAction<string>>]{
     const [item,setItem]=React.useState("");
     React.useEffect(()=>{
          const storedItem=localStorage.getItem(key);

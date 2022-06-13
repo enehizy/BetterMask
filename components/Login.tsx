@@ -5,7 +5,6 @@ import Password from './Password';
 import WalletIcon from './WalletIcon';
 import {useRouter} from 'next/router';
 import WelcomeText from './WelcomeText';
-import {Wallet} from '@ethersproject/wallet';
 import { getUriAndKeyFromUrl ,subscribeToEvents,connectToWalletConnect} from '../utils/walletconnect';
 import { getWallet } from '../utils/wallet';
 import useKey from '../hooks/useKey';
