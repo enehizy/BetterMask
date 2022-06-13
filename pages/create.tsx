@@ -85,7 +85,7 @@ export default function CreateWallet(){
             <span className="font-mono text-gray-500 cursor-pointer hover:underline ">{'< '}<Link href="/">Back</Link></span>
       
         
-          <h1 className="text-xl md:text-2xl font-bold">Create a Fuse Wallet</h1>
+          <h1 className="text-xl md:text-2xl font-bold">Create a Wallet</h1>
     
        
         <form className="w-full max-w-[500px] space-y-8  " onSubmit={(e)=>{createNewWallet(e)}}>
